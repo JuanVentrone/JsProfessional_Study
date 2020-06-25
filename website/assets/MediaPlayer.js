@@ -18,8 +18,6 @@ function MediaPlayer(config) {
       }
     };
 
-    player.muted();
-
     this.plugins.forEach(plugin=>{
         plugin.run(player);
     });
@@ -33,20 +31,20 @@ function MediaPlayer(config) {
     this.media.pause();
   };
   
-  // MediaPlayer.prototype.togglePlay = function() {
-  //   if (this.media.paused) {
-  //     this.play();
-  //   } else {
-  //     this.pause();
-  //   }
-  // };
+  MediaPlayer.prototype.togglePlay = function() {
+    if (this.media.paused) {
+      this.play();
+    } else {
+      this.pause();
+    }
+  };
   
   MediaPlayer.prototype.mute= function(){
     this.media.muted=true;
   };
   
   MediaPlayer.prototype.toggleMute= function(){
-    if (this.media.muted==true) {
+    if (this.media.muted) {
         this.media.muted=false;
       } else {
         this.media.muted= true;
