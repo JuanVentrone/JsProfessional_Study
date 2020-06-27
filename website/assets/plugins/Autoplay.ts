@@ -1,3 +1,5 @@
+import MediaPlayer from "../MediaPlayer";
+
 function Autoplay(){
     Autoplay.prototype.run= function(player){
        if (!player.muted){
